@@ -124,3 +124,20 @@ Daten an Mosquitto Broker senden:
 
 * [MQTT IoTKit](https://github.com/mc-b/IoTKitV2/tree/master/mqtt)
 * [MQTT Publish](https://github.com/mc-b/IoTKitV2/blob/master/mqtt/MQTTPublish)
+
+### IoT und Kafka Beispiele
+
+#### Funktionsweise
+
+* [IoTKit](https://github.com/mc-b/iotkitv3) --> MQTT-Protokoll --> [MQTT Broker](https://mosquitto.org/) --> [MQTT-Kafka-Bridge](https://github.com/jacklund/mqttKafkaBridge) 
+--> [Pipe](https://github.com/mc-b/iot.kafka/blob/master/src/main/java/ch/mc_b/iot/kafka/Pipe.java) und [CSVConsumer](https://github.com/mc-b/iot.kafka/blob/master/src/main/java/ch/mc_b/iot/kafka/CSVConsumer.java) und [Alert](https://github.com/mc-b/iot.kafka/blob/master/src/main/java/ch/mc_b/iot/kafka/AlertConsumer.java) 
+
+#### Starten
+
+	kubectl create -f duk/iot/mosquitto.yaml
+	kubectl create -f duk/kafka
+	kubectl create -f iot.kafka
+	
+In den Entsprechenden Logs der Container stehen die Meldungen drin, z.B.:
+
+	logs iot-kafka-pipe
