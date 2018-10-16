@@ -14,8 +14,15 @@ kubectl create -f https://raw.githubusercontent.com/mc-b/mlg/master/jupyter/jupy
 # Jupyter Scripte etc. Allgemein verfuegbar machen
 cp -rpv data/* /data/
 
+# BPMN
+docker pull camunda/camunda-bpm-platform
+kubectl create -f https://raw.githubusercontent.com/mc-b/misegr/master/bpmn/camunda.yaml
+
 # DevOps Beispiele
 kubectl create ns production
+docker pull gogs/gogs
+docker pull misegr/jenkins
+docker pull kanboard/kanboard
 
 # Aufraeumen um Speicher zu sparen
 kubectl delete -f https://raw.githubusercontent.com/mc-b/duk/master/jupyter/jupyter-base.yaml 
