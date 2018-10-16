@@ -13,3 +13,11 @@ kubectl create -f https://raw.githubusercontent.com/mc-b/mlg/master/jupyter/jupy
 
 # Jupyter Scripte etc. Allgemein verfuegbar machen
 cp -rpv data/* /data/
+
+# DevOps Beispiele
+kubectl create ns production
+
+# Aufraeumen um Speicher zu sparen
+kubectl delete -f https://raw.githubusercontent.com/mc-b/duk/master/jupyter/jupyter-base.yaml 
+kubectl delete -f https://raw.githubusercontent.com/mc-b/duk/master/jupyter/dind.yaml
+
