@@ -38,7 +38,7 @@ Nach der Installation: öffnet die Interaktive Lernumgebung mit dem Machine Lear
 
 OS Ticket, als ein Beispiel für die Ausbildung an Berufschulen zeigen.
 
-	kubectl create -f duk/osticket
+	kubectl apply -f duk/osticket
 	startsrv osticket
 	kubectl delete -f duk/osticket
 
@@ -48,7 +48,7 @@ Hinweis auf [lernkube](https://github.com/mc-b/lernkube).
 
 Edge und Data Center: starten Mosquitto, Kafka, MQTT-Bridge, Streams und Consumer Beispiel
 
-	kubectl create -f devdays/iotmldata/
+	kubectl apply -f devdays/iotmldata/
 	
 Weitere Möglichkeiten und Sourcecode auf https://github.com/mc-b/duk/tree/master/kafka#kafka-mit-mqtt-bridge und https://github.com/mc-b/iot.kafka.git.
 
@@ -63,9 +63,9 @@ Weave Oberfläche mittels `weave` in Bash starten und Verbindungen zeigen.
 
 Camunda BPMN Workflow Engine starten
 
-	kubectl create -f misegr/bpmn/camunda.yaml
+	kubectl apply -f misegr/bpmn/camunda.yaml
 	
-Camunda BPMN Oberfläche (Tasks) aufrufen [https://localhost:30443/camunda](https://localhost:30443/camunda). Es sollten nur zwei Task offen sein.
+Camunda BPMN Oberfläche (Tasklist) aufrufen [https://localhost:30443/camunda](https://localhost:30443/camunda), Anmelden mit `demo/demo`. Es sollten nur zwei Task offen sein.
 
 BPMN Prozess veröffentlichen 	
 
@@ -80,5 +80,5 @@ BPMN Prozess veröffentlichen
 
 Magnet an Hallsensor auf IoTKit anlegen und warten bis `alert` auf Display erscheint und LED 13 leuchtet.
 
-Wechsel in BPMN Oberfläche (Tasks). Es sollte eine neue Task erstellt worden sein.
+Wechsel in BPMN Oberfläche (Tasklist). Es sollte eine neue Task erstellt worden sein.
 
