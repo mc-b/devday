@@ -119,13 +119,13 @@ Tools starten
 	
 #### Folie 18 - Rolling Update
 
-* Image auf neue Version setzen:
+Image auf neue Version setzen:
 
 	kubectl set image deployment/bpmn-frontend bpmn-frontend=misegr/bpmn-frontend:V1.0
 		
-* Es wird automatisch ein Rolling Update durchgeführt.
+Es wird automatisch ein Rolling Update durchgeführt.
 
-* Änderungen Verfolgen mittels:
+Änderungen Verfolgen mittels:
 
 
 	kubectl rollout status deployment/bpmn-frontend
