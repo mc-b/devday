@@ -18,7 +18,7 @@ Nach der Installation: öffnet die Interaktive Lernumgebung mit dem Machine Lear
 
 ### Aufbau einer Internet of Things – Machine Learning Fast Data Pipeline mit Docker/Kubernetes
 
-**Folie 10 - IoT Gerät Programmieren**
+#### Folie 10 - IoT Gerät Programmieren
 
 * IoTKit V3 via USB anschliessen, neues Laufwerk (Mountpoint) wird angezeigt
 * mbed.htm Doppelklicken, [os.mbed.com](http://os.mbed.com) Website wird anzeigt
@@ -30,11 +30,11 @@ Nach der Installation: öffnet die Interaktive Lernumgebung mit dem Machine Lear
 * Umgebung mit Installierter `mosquitto-clients` Tools starten, z.B. `Bash`
 * MQTT Daten mittels `mosquitto_sub -t 'iotkit/#' -h iot.eclipse.org` anzeigen lassen.
 
-**Folie 15 - ML/IoT (02-2-MLTempHumSensor)**
+#### Folie 15 - ML/IoT (02-2-MLTempHumSensor)
 
 * Jupyter Notebook, mit Machine Learning / IoT Beispiel mittels [http://localhost:32088/notebooks/02-2-MLTempHumSensor.ipynb](http://localhost:32088/notebooks/02-2-MLTempHumSensor.ipynb) aufrufen und durcharbeiten mit `Run`.
 
-** Folie 21 - Docker und Kubernetes**
+#### Folie 21 - Docker und Kubernetes
 
 OS Ticket, als ein Beispiel für die Ausbildung an Berufschulen zeigen.
 
@@ -44,11 +44,11 @@ OS Ticket, als ein Beispiel für die Ausbildung an Berufschulen zeigen.
 
 Hinweis auf [lernkube](https://github.com/mc-b/lernkube).
 
-** Folie 29 - Fast Data Pipeline**
+#### Folie 29 - Fast Data Pipeline
 
 Edge und Data Center: starten Mosquitto, Kafka, MQTT-Bridge, Streams und Consumer Beispiel
 
-	kubectl apply -f devdays/iotmldata/
+	kubectl apply -f devday/iotmldata/
 	
 Weitere Möglichkeiten und Sourcecode auf https://github.com/mc-b/duk/tree/master/kafka#kafka-mit-mqtt-bridge und https://github.com/mc-b/iot.kafka.git.
 
@@ -59,7 +59,7 @@ Kontrollieren im Dashboard Logs der Pods iot-kafka-* anschauen, mittels Weave od
 	
 Weave Oberfläche mittels `weave` in Bash starten und Verbindungen zeigen.
 
-** Folie 30 - IoT und Prozesse**
+#### Folie 30 - IoT und Prozesse
 
 Camunda BPMN Workflow Engine starten
 
@@ -80,5 +80,75 @@ BPMN Prozess veröffentlichen
 
 Magnet an Hallsensor auf IoTKit anlegen und warten bis `alert` auf Display erscheint und LED 13 leuchtet.
 
-Wechsel in BPMN Oberfläche (Tasklist). Es sollte eine neue Task erstellt worden sein.
+Wechsel in BPMN Oberfläche (Tasklist). Es ist eine neue Task erstellt worden.
+
+### Aufbau einer Continous Integration / Delivery Pipeline mit Docker/Kubernetes
+
+#### Folie 9 - Docker und Kubernetes
+
+OS Ticket, als ein Beispiel für die Ausbildung an Berufschulen zeigen.
+
+	kubectl apply -f duk/osticket
+	startsrv osticket
+	kubectl delete -f duk/osticket
+	
+#### Folie 16 - CI / CD Tools
+
+Tools starten
+
+	kubectl apply –f devday/devops/
+	
+**SW Entwicklung**
+
+* Planen
+    * [Kanboard](http://localhost:32200) Aufrufen, Anmelden mit `admin/admin`
+    * Projekt ["Aufbau CI/CD"](http://localhost:32200/?controller=BoardViewController&action=show&project_id=1&search=status%3Aopen) zeigen.
+* Versionsverwaltung (Git Repository) einrichten
+    * [Gogs](http://localhost:32300) Aufrufen, Anmelden mit `root/xxx`
+    * "+" Erstellen -> Neue Migration
+	* https://github.com/mc-b/bpmn-tutorial Repository übernehmen
+* Sourcen um CI/CD Konfiguration ergänzen (Jenkingsfile).
+	* [Jenkinsfile]() Zeigen und Kontrollieren
+* Neue Pipeline in Jenkins  anlegen
+	* [Jenkins](http://localhost:32100) Aufrufen, Anmelden mit `admin/admin`
+	* Wechseln auf "Open Blue Ocean" 
+	* "Create new Pipeline" ab Git und mit URL [http://localhost:32300/root/bpmn-tutorial.git](http://localhost:32300/root/bpmn-tutorial.git)
+	* Nach erfolgreicher Abarbeitung der Jenkins Pipeline
+	* Neu erstellte Applikation [bpmn-frontend](https://localhost:30443/frontend/index.html) Aufrufen.	
+	* Dashboard in der `Bash` mit `dashboard` starten, Kontrollieren ob ein Pod `bpmn-frontend` läuft.	
+	
+#### Folie 18 - Rolling Update
+
+* Image auf neue Version setzen:
+
+	kubectl set image deployment/bpmn-frontend bpmn-frontend=misegr/bpmn-frontend:V1.0
+		
+* Es wird automatisch ein Rolling Update durchgeführt.
+
+* Änderungen Verfolgen mittels:
+
+	kubectl rollout status deployment/bpmn-frontend
+	kubectl describe deployments bpmn-frontend
+
+#### Folie 22 - CI/CD Rolling Update
+
+Alte BPMN-Services wegräumen
+
+	kubectl delete -f misegr/bpmn/
+	
+Und in [Jenkins](http://localhost:32100) Pipeline löschen.
+
+[Gogs](http://localhost:32300) Aufrufen, `bpmn-frontend/index.html` Ändern und beim Neuen Branch `V1.1` anlegen.
+
+In [Jenkins](http://localhost:32100) Pipeline wieder anlegen. Es wird für `master` und `V1.1` eine Pipeline erzeugt.
+
+Bei jedem Neuen Starten der `V1.1` Pipeline, wird ein neues Docker Image mit Version `V1.1.${BUILD_NUMBER}` erstellt.
+
+#### Folie 23 - Kanboard Task Updaten
+
+[Gogs](http://localhost:32300) kann Änderungen in Repository, bzw. dessen Kommentar an [Kanboard](http://localhost:32200) weitergeben.
+
+Details siehe: https://github.com/kanboard/plugin-gogs-webhook 
+
+
 
