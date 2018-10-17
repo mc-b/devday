@@ -106,7 +106,7 @@ Tools starten
 * Versionsverwaltung (Git Repository) einrichten
     * [Gogs](http://localhost:32300) Aufrufen, Anmelden mit `root/xxx`
     * "+" Erstellen -> Neue Migration
-	* https://github.com/mc-b/bpmn-tutorial Repository übernehmen
+	* https://github.com/bernet-tbz/bpmn-tutorial.git Repository übernehmen
 * Sourcen um CI/CD Konfiguration ergänzen (Jenkingsfile).
 	* [Jenkinsfile]() Zeigen und Kontrollieren
 * Neue Pipeline in Jenkins  anlegen
