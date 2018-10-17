@@ -48,7 +48,7 @@ Hinweis auf [lernkube](https://github.com/mc-b/lernkube).
 
 Edge und Data Center: starten Mosquitto, Kafka, MQTT-Bridge, Streams und Consumer Beispiel
 
-	kubectl apply -f devdays/iotmldata/
+	kubectl apply -f devday/iotmldata/
 	
 Weitere Möglichkeiten und Sourcecode auf https://github.com/mc-b/duk/tree/master/kafka#kafka-mit-mqtt-bridge und https://github.com/mc-b/iot.kafka.git.
 
