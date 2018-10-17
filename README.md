@@ -128,6 +128,7 @@ Tools starten
 * Änderungen Verfolgen mittels:
 
 	kubectl rollout status deployment/bpmn-frontend
+	
 	kubectl describe deployments bpmn-frontend
 
 #### Folie 22 - CI/CD Rolling Update
