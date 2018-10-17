@@ -148,6 +148,16 @@ Bei jedem Neuen Starten der `V1.1` Pipeline, wird ein neues Docker Image mit Ver
 
 [Gogs](http://localhost:32300) kann Änderungen in Repository, bzw. dessen Kommentar an [Kanboard](http://localhost:32200) weitergeben.
 
+* Im [Kanboard](http://localhost:32200)
+	* Rechts -> Plug-Ins -> Gogs Webhooks Plug-In installieren
+	* Auf dem Projekt -> Zahnrad (links) -> Projekteinstellungen -> Automatische Aktionen -> Kommentar eines externen Providers hinzufügen -> Gogs
+	* Auf dem Projekt -> Zahnrad (links) -> Projekteinstellungen -> Integration -> Webhooks URL kopieren.
+
+* In [Gogs](http://localhost:32300)
+	* Repository -> Einstellungen -> Webhooks hinzufügen -> Gogs -> Payload URL = Webhooks URL von Kanboard, Feld "Secrets" leer lassen.
+	* Repository -> Eine Datei bzw. dessen Inhalt verändern und beim Kommentar z.B. "Zu Besprechen #8" eingeben. 
+	* #8 Entspricht der Tasknummer in Kanboard. 	
+
 Details siehe: https://github.com/kanboard/plugin-gogs-webhook 
 
 
