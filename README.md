@@ -18,7 +18,7 @@ Nach der Installation: öffnet die Interaktive Lernumgebung mit dem Machine Lear
 
 ### Aufbau einer Internet of Things – Machine Learning Fast Data Pipeline mit Docker/Kubernetes
 
-**Folie 10 - IoT Gerät Programmieren**
+#### Folie 10 - IoT Gerät Programmieren
 
 * IoTKit V3 via USB anschliessen, neues Laufwerk (Mountpoint) wird angezeigt
 * mbed.htm Doppelklicken, [os.mbed.com](http://os.mbed.com) Website wird anzeigt
@@ -30,11 +30,11 @@ Nach der Installation: öffnet die Interaktive Lernumgebung mit dem Machine Lear
 * Umgebung mit Installierter `mosquitto-clients` Tools starten, z.B. `Bash`
 * MQTT Daten mittels `mosquitto_sub -t 'iotkit/#' -h iot.eclipse.org` anzeigen lassen.
 
-**Folie 15 - ML/IoT (02-2-MLTempHumSensor)**
+#### Folie 15 - ML/IoT (02-2-MLTempHumSensor)
 
 * Jupyter Notebook, mit Machine Learning / IoT Beispiel mittels [http://localhost:32088/notebooks/02-2-MLTempHumSensor.ipynb](http://localhost:32088/notebooks/02-2-MLTempHumSensor.ipynb) aufrufen und durcharbeiten mit `Run`.
 
-** Folie 21 - Docker und Kubernetes**
+#### Folie 21 - Docker und Kubernetes
 
 OS Ticket, als ein Beispiel für die Ausbildung an Berufschulen zeigen.
 
@@ -44,7 +44,7 @@ OS Ticket, als ein Beispiel für die Ausbildung an Berufschulen zeigen.
 
 Hinweis auf [lernkube](https://github.com/mc-b/lernkube).
 
-** Folie 29 - Fast Data Pipeline**
+#### Folie 29 - Fast Data Pipeline
 
 Edge und Data Center: starten Mosquitto, Kafka, MQTT-Bridge, Streams und Consumer Beispiel
 
@@ -59,7 +59,7 @@ Kontrollieren im Dashboard Logs der Pods iot-kafka-* anschauen, mittels Weave od
 	
 Weave Oberfläche mittels `weave` in Bash starten und Verbindungen zeigen.
 
-** Folie 30 - IoT und Prozesse**
+#### Folie 30 - IoT und Prozesse
 
 Camunda BPMN Workflow Engine starten
 
