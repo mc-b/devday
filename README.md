@@ -19,9 +19,9 @@ Nach der Installation: öffnet die Interaktive Lernumgebung mit dem Machine Lear
 ### Aufbau einer Internet of Things – Machine Learning Fast Data Pipeline mit Docker/Kubernetes
 ***
 
-![](slides/CI_CD_DUK.jpg)
+![](slides/IoT-ML-MS.jpg)
 
-[Slides](slides/CI_CD_DUK.pdf)
+[Slides](slides/IoT-ML-MS.pdf)
 
 - - - 
 
@@ -92,9 +92,9 @@ Wechsel in BPMN Oberfläche (Tasklist). Es ist eine neue Task erstellt worden.
 ### Aufbau einer Continous Integration / Delivery Pipeline mit Docker/Kubernetes
 ***
 
-![](slides/IoT-ML-MS.jpg)
+![](slides/CI_CD_DUK.jpg)
 
-[Slides](slides/IoT-ML-MS.pdf)
+[Slides](slides/CI_CD_DUK.pdf)
 
 - - - 
 
