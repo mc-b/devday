@@ -94,7 +94,7 @@ Wechsel in BPMN Oberfläche (Tasklist). Es ist eine neue Task erstellt worden.
 
 ![](slides/IoT-ML-MS.jpg)
 
-[Slides](IoT-ML-MS.pdf)
+[Slides](slides/IoT-ML-MS.pdf)
 
 - - - 
 
