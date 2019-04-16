@@ -17,6 +17,13 @@ Projekt [lernkube](https://github.com/mc-b/lernkube), auf der Git/Bash Kommandoz
 Nach der Installation: öffnet die Interaktive Lernumgebung mit dem Machine Learning Beispiel [http://localhost:32088/notebooks/02-2-MLTempHumSensor.ipynb](http://localhost:32088/notebooks/02-2-MLTempHumSensor.ipynb) und spielt das Beispiel, mittels `Run` durch.
 
 ### Aufbau einer Internet of Things – Machine Learning Fast Data Pipeline mit Docker/Kubernetes
+***
+
+![](slides/CI_CD_DUK.jpg)
+
+[Slides](slides/CI_CD_DUK.pdf)
+
+- - - 
 
 #### Folie 10 - IoT Gerät Programmieren
 
@@ -83,6 +90,13 @@ Magnet an Hallsensor auf IoTKit anlegen und warten bis `alert` auf Display ersch
 Wechsel in BPMN Oberfläche (Tasklist). Es ist eine neue Task erstellt worden.
 
 ### Aufbau einer Continous Integration / Delivery Pipeline mit Docker/Kubernetes
+***
+
+![](slides/IoT-ML-MS.jpg)
+
+[Slides](IoT-ML-MS.pdf)
+
+- - - 
 
 #### Folie 9 - Docker und Kubernetes
 
